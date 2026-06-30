@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Penduduk - WebGIS Kecamatan Genuk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        * {
+            text-decoration: none !important;
+        }
+
+        body {
+            font-family: Segoe UI, sans-serif
+        }
+
+        .topbar {
+            background: #0d6efd;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 14px
+        }
+        /* Background Penduduk */
+        .hero {
+            height: 60vh;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop') center/cover
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, .55);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #0d6efd
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+        }
+
+        .stat-box.male {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+        }
+
+        .stat-box.female {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table th {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #0d6efd;
+            color: #fff
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container d-flex justify-content-between">
+            <div><i class="fa fa-phone"></i> (024) 123456 &nbsp; <i class="fa fa-envelope"></i>
+                genukhealth@semarang.go.id</div>
+            <div>#WebGISGenuk</div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html"><i
+                    class="fa-solid fa-map-location-dot"></i> WEBGIS GENUK</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#m"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="m">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./facility.html">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./road_network.html">Jaringan Jalan</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Penduduk</a></li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="overlay">
+            <div class="container">
+                <h1>DATA PENDUDUK KECAMATAN GENUK</h1>
+                <p>Informasi Demografi • Kota Semarang</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="section-title mb-5 text-center">Statistik Penduduk Menurut Jenis Kelamin</h2>
+        
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <div class="stat-number">126,799</div>
+                    <div class="stat-label">Total Penduduk</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-box male">
+                    <div class="stat-number">63,651</div>
+                    <div class="stat-label">Laki-laki</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-box female">
+                    <div class="stat-number">63,148</div>
+                    <div class="stat-label">Perempuan</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h3 class="section-title mb-4">Distribusi Penduduk Menurut Kelompok Usia Tahun 2023</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">Kelompok Usia</th>
+                                <th style="width: 20%;">Laki-laki</th>
+                                <th style="width: 20%;">Perempuan</th>
+                                <th style="width: 20%;">Total</th>
+                                <th style="width: 15%;">Persentase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0 - 4 Tahun</td>
+                                <td>4,943</td>
+                                <td>4,741</td>
+                                <td><strong>9,684</strong></td>
+                                <td>7.64%</td>
+                            </tr>
+                            <tr>
+                                <td>5 - 9 Tahun</td>
+                                <td>5,688</td>
+                                <td>5,500</td>
+                                <td><strong>11,188</strong></td>
+                                <td>8.82%</td>
+                            </tr>
+                            <tr>
+                                <td>10 - 14 Tahun</td>
+                                <td>5,781</td>
+                                <td>5,431</td>
+                                <td><strong>11,212</strong></td>
+                                <td>8.84%</td>
+                            </tr>
+                            <tr>
+                                <td>15 - 19 Tahun</td>
+                                <td>5,190</td>
+                                <td>4,871</td>
+                                <td><strong>10,061</strong></td>
+                                <td>7.93%</td>
+                            </tr>
+                            <tr>
+                                <td>20 - 24 Tahun</td>
+                                <td>4,941</td>
+                                <td>4,818</td>
+                                <td><strong>9,759</strong></td>
+                                <td>7.69%</td>
+                            </tr>
+                            <tr>
+                                <td>25 - 29 Tahun</td>
+                                <td>4,864</td>
+                                <td>4,954</td>
+                                <td><strong>9,818</strong></td>
+                                <td>7.74%</td>
+                            </tr>
+                            <tr>
+                                <td>30 - 34 Tahun</td>
+                                <td>5,244</td>
+                                <td>5,199</td>
+                                <td><strong>10,443</strong></td>
+                                <td>8.23%</td>
+                            </tr>
+                            <tr>
+                                <td>35 - 39 Tahun</td>
+                                <td>5,104</td>
+                                <td>5,165</td>
+                                <td><strong>10,269</strong></td>
+                                <td>8.09%</td>
+                            </tr>
+                            <tr>
+                                <td>40 - 44 Tahun</td>
+                                <td>5,607</td>
+                                <td>5,592</td>
+                                <td><strong>11,199</strong></td>
+                                <td>8.83%</td>
+                            </tr>
+                            <tr>
+                                <td>45 - 49 Tahun</td>
+                                <td>4,473</td>
+                                <td>4,536</td>
+                                <td><strong>9,009</strong></td>
+                                <td>7.10%</td>
+                            </tr>
+                            <tr>
+                                <td>50 - 54 Tahun</td>
+                                <td>3,801</td>
+                                <td>3,977</td>
+                                <td><strong>7,778</strong></td>
+                                <td>6.13%</td>
+                            </tr>
+                            <tr>
+                                <td>55 - 59 Tahun</td>
+                                <td>2,979</td>
+                                <td>3,116</td>
+                                <td><strong>6,095</strong></td>
+                                <td>4.81%</td>
+                            </tr>
+                            <tr>
+                                <td>60 - 64 Tahun</td>
+                                <td>2,338</td>
+                                <td>2,398</td>
+                                <td><strong>4,736</strong></td>
+                                <td>3.73%</td>
+                            </tr>
+                            <tr>
+                                <td>65 - 69 Tahun</td>
+                                <td>1,503</td>
+                                <td>1,380</td>
+                                <td><strong>2,883</strong></td>
+                                <td>2.27%</td>
+                            </tr>
+                            <tr>
+                                <td>70 - 74 Tahun</td>
+                                <td>725</td>
+                                <td>677</td>
+                                <td><strong>1,402</strong></td>
+                                <td>1.11%</td>
+                            </tr>
+                            <tr>
+                                <td>75+ Tahun</td>
+                                <td>470</td>
+                                <td>793</td>
+                                <td><strong>1,263</strong></td>
+                                <td>1.00%</td>
+                            </tr>
+                            <tr style="background-color: #f0f0f0;">
+                                <td><strong>Total</strong></td>
+                                <td><strong>63,651</strong></td>
+                                <td><strong>63,148</strong></td>
+                                <td><strong>126,799</strong></td>
+                                <td><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak" class="py-4">
+        <div class="container text-center">
+            <h5>WebGIS Aksesibilitas Fasilitas Kesehatan Kecamatan Genuk</h5>
+            <p>Kelompok 4 • Program Studi PWK • Universitas Islam Sultan Agung</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
