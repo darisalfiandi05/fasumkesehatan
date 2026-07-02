@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaringan Jalan - WebGIS Kecamatan Genuk</title>
+    <title>Jangkauan Fasilitas - WebGIS Kecamatan Genuk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
@@ -63,7 +63,7 @@
             background: #ffc107
         }
 
-        #mapFrame {
+        .map-frame {
             height: 500px;
             border: none;
             border-radius: 10px;
@@ -96,7 +96,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="./index.html">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="./facility.html">Fasilitas</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Jaringan Jalan</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Jangkauan Fasilitas</a></li>
                     <li class="nav-item"><a class="nav-link" href="./resident.html">Penduduk</a></li>
                 </ul>
             </div>
@@ -106,8 +106,8 @@
     <section class="hero">
         <div class="overlay">
             <div class="container">
-                <h1>JARINGAN JALAN KECAMATAN GENUK</h1>
-                <p>Infrastruktur Transportasi • Kota Semarang</p>
+                <h1>JANGKAUAN FASILITAS KESEHATAN KECAMATAN GENUK</h1>
+                <p>Fasilitas Kesehatan • Kota Semarang</p>
             </div>
         </div>
     </section>
@@ -173,10 +173,11 @@
             </div>
 
             <div class="col-md-7">
-                <h2 class="section-title mb-4">Peta Jaringan Jalan</h2>
-                <iframe id="mapFrame" src="./qgis2web_2026_06_30-21_32_50_750851/index.html" class="shadow-sm"></iframe>
+                <h2 class="section-title mb-4 mt-4">Peta Buffer Faskes</h2>
+                <iframe id="bufferMapFrame" class="map-frame shadow-sm" src="./Buffer%20Faskes/qgis2web_2026_07_01-19_41_39_312882/index.html"></iframe>
+                
                 <div class="mt-4">
-                    <h5 class="section-title">Statistik Jaringan Jalan</h5>
+                    <h5 class="section-title">Statistik Jangkauan Fasilitas</h5>
                     <div class="row text-center">
                         <div class="col-md-4">
                             <div class="p-3 bg-light rounded">
