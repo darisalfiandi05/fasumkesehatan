@@ -74,6 +74,24 @@
             background: #0d6efd;
             color: #fff
         }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 50%;
+            padding: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
@@ -204,9 +222,14 @@
     </section>
 
     <footer id="kontak" class="py-4">
-        <div class="container text-center">
-            <h5>WebGIS Aksesibilitas Fasilitas Kesehatan Kecamatan Genuk</h5>
-            <p>Kelompok 4 • Program Studi PWK • Universitas Islam Sultan Agung</p>
+        <div class="container">
+            <div class="footer-content text-center">
+                <img src="logo/assets/logo/logo-unissula.png" alt="Logo UNISSULA" class="footer-logo">
+                <div>
+                    <h5>WebGIS Aksesibilitas Fasilitas Kesehatan Kecamatan Genuk</h5>
+                    <p>Kelompok 4 • Program Studi PWK • Universitas Islam Sultan Agung</p>
+                </div>
+            </div>
         </div>
     </footer>
 
