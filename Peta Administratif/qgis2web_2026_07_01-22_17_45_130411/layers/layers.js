@@ -87,42 +87,24 @@ var lyr_RumahSakit_5 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/RumahSakit_5.png" /> Rumah Sakit'
             });
-var format_JaringanJalan_6 = new ol.format.GeoJSON();
-var features_JaringanJalan_6 = format_JaringanJalan_6.readFeatures(json_JaringanJalan_6, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_JaringanJalan_6 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_JaringanJalan_6.addFeatures(features_JaringanJalan_6);
-var lyr_JaringanJalan_6 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_JaringanJalan_6, 
-                style: style_JaringanJalan_6,
-                popuplayertitle: 'Jaringan Jalan',
-                interactive: true,
-                title: 'Jaringan Jalan'
-            });
 
-lyr_WorldStreetMap_0.setVisible(true);lyr_Export_semarang_kota_1.setVisible(true);lyr_Kecamatan_Genuk_2.setVisible(true);lyr_Klinik_3.setVisible(true);lyr_Puskesmas_4.setVisible(true);lyr_RumahSakit_5.setVisible(true);lyr_JaringanJalan_6.setVisible(true);
-var layersList = [lyr_WorldStreetMap_0,lyr_Export_semarang_kota_1,lyr_Kecamatan_Genuk_2,lyr_Klinik_3,lyr_Puskesmas_4,lyr_RumahSakit_5,lyr_JaringanJalan_6];
+lyr_WorldStreetMap_0.setVisible(true);lyr_Export_semarang_kota_1.setVisible(true);lyr_Kecamatan_Genuk_2.setVisible(true);lyr_Klinik_3.setVisible(true);lyr_Puskesmas_4.setVisible(true);lyr_RumahSakit_5.setVisible(true);
+var layersList = [lyr_WorldStreetMap_0,lyr_Export_semarang_kota_1,lyr_Kecamatan_Genuk_2,lyr_Klinik_3,lyr_Puskesmas_4,lyr_RumahSakit_5];
 lyr_Export_semarang_kota_1.set('fieldAliases', {'FID_Conver': 'FID_Conver', 'Name': 'Name', 'FID_BATAS_': 'FID_BATAS_', 'KAB': 'KAB', 'COUNT': 'COUNT', 'AREA': 'AREA', 'PERIMETER': 'PERIMETER', 'HECTARES': 'HECTARES', 'ET_ID': 'ET_ID', 'PENDUDUK': 'PENDUDUK', 'LUAS': 'LUAS', 'JIWA_HA': 'JIWA_HA', });
 lyr_Kecamatan_Genuk_2.set('fieldAliases', {'KDCPUM': 'KDCPUM', 'KDPKAB': 'KDPKAB', 'KDPPUM': 'KDPPUM', 'WADMKC': 'WADMKC', 'WADMKK': 'WADMKK', 'WADMPR': 'WADMPR', 'METADATA': 'METADATA', 'UPDATED': 'UPDATED', });
 lyr_Klinik_3.set('fieldAliases', {'Id': 'Id', });
 lyr_Puskesmas_4.set('fieldAliases', {'Id': 'Id', });
 lyr_RumahSakit_5.set('fieldAliases', {'Id': 'Id', });
-lyr_JaringanJalan_6.set('fieldAliases', {'id': 'ID', 'nama_jalan': 'Nama Jalan', 'panjang': 'Panjang', 'lebar': 'Lebar', 'jenis': 'Jenis Jalan', });
 lyr_Export_semarang_kota_1.set('fieldImages', {'FID_Conver': 'TextEdit', 'Name': 'TextEdit', 'FID_BATAS_': 'TextEdit', 'KAB': 'TextEdit', 'COUNT': 'TextEdit', 'AREA': 'TextEdit', 'PERIMETER': 'TextEdit', 'HECTARES': 'TextEdit', 'ET_ID': 'TextEdit', 'PENDUDUK': 'TextEdit', 'LUAS': 'TextEdit', 'JIWA_HA': 'TextEdit', });
 lyr_Kecamatan_Genuk_2.set('fieldImages', {'KDCPUM': 'TextEdit', 'KDPKAB': 'TextEdit', 'KDPPUM': 'TextEdit', 'WADMKC': 'TextEdit', 'WADMKK': 'TextEdit', 'WADMPR': 'TextEdit', 'METADATA': 'TextEdit', 'UPDATED': 'TextEdit', });
 lyr_Klinik_3.set('fieldImages', {'Id': '', });
 lyr_Puskesmas_4.set('fieldImages', {'Id': '', });
 lyr_RumahSakit_5.set('fieldImages', {'Id': 'Range', });
-lyr_JaringanJalan_6.set('fieldImages', {'id': 'TextEdit', 'nama_jalan': 'TextEdit', 'panjang': 'TextEdit', 'lebar': 'TextEdit', 'jenis': 'TextEdit', });
 lyr_Export_semarang_kota_1.set('fieldLabels', {'FID_Conver': 'no label', 'Name': 'no label', 'FID_BATAS_': 'no label', 'KAB': 'no label', 'COUNT': 'no label', 'AREA': 'no label', 'PERIMETER': 'no label', 'HECTARES': 'no label', 'ET_ID': 'no label', 'PENDUDUK': 'no label', 'LUAS': 'no label', 'JIWA_HA': 'no label', });
 lyr_Kecamatan_Genuk_2.set('fieldLabels', {'KDCPUM': 'no label', 'KDPKAB': 'no label', 'KDPPUM': 'no label', 'WADMKC': 'no label', 'WADMKK': 'no label', 'WADMPR': 'no label', 'METADATA': 'no label', 'UPDATED': 'no label', });
 lyr_Klinik_3.set('fieldLabels', {'Id': 'no label', });
 lyr_Puskesmas_4.set('fieldLabels', {'Id': 'no label', });
 lyr_RumahSakit_5.set('fieldLabels', {'Id': 'no label', });
-lyr_JaringanJalan_6.set('fieldLabels', {'id': 'inline label', 'nama_jalan': 'inline label', 'panjang': 'inline label', 'lebar': 'inline label', 'jenis': 'inline label', });
 lyr_RumahSakit_5.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
