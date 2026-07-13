@@ -25,7 +25,7 @@ var lyr_Kecamatan_Genuk_1 = new ol.layer.Vector({
                 style: style_Kecamatan_Genuk_1,
                 popuplayertitle: 'Kecamatan_Genuk',
                 interactive: true,
-                title: '<img src="styles/legend/Kecamatan_Genuk_1.png" /> Kecamatan_Genuk'
+                title: 'Kecamatan Genuk'
             });
 var format_Klinik_2 = new ol.format.GeoJSON();
 var features_Klinik_2 = format_Klinik_2.readFeatures(json_Klinik_2, 
@@ -40,7 +40,7 @@ var lyr_Klinik_2 = new ol.layer.Vector({
                 style: style_Klinik_2,
                 popuplayertitle: 'Klinik',
                 interactive: true,
-                title: '<img src="styles/legend/Klinik_2.png" /> Klinik'
+                title: 'Klinik'
             });
 var format_Puskesmas_3 = new ol.format.GeoJSON();
 var features_Puskesmas_3 = format_Puskesmas_3.readFeatures(json_Puskesmas_3, 
@@ -55,7 +55,7 @@ var lyr_Puskesmas_3 = new ol.layer.Vector({
                 style: style_Puskesmas_3,
                 popuplayertitle: 'Puskesmas',
                 interactive: true,
-                title: '<img src="styles/legend/Puskesmas_3.png" /> Puskesmas'
+                title: 'Puskesmas'
             });
 var format_RumahSakit_4 = new ol.format.GeoJSON();
 var features_RumahSakit_4 = format_RumahSakit_4.readFeatures(json_RumahSakit_4, 
@@ -70,7 +70,7 @@ var lyr_RumahSakit_4 = new ol.layer.Vector({
                 style: style_RumahSakit_4,
                 popuplayertitle: 'Rumah Sakit',
                 interactive: true,
-                title: '<img src="styles/legend/RumahSakit_4.png" /> Rumah Sakit'
+                title: 'Rumah Sakit'
             });
 
 lyr_WorldStreetMap_0.setVisible(true);lyr_Kecamatan_Genuk_1.setVisible(true);lyr_Klinik_2.setVisible(true);lyr_Puskesmas_3.setVisible(true);lyr_RumahSakit_4.setVisible(true);
